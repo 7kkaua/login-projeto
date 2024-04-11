@@ -9,7 +9,7 @@
             <input id="user" type="email" required />
             <label for="user">Usuário</label>
           </div>
-          <div>
+          <div class="inputbox">
             <ion-icon name="lock-closed-outline"></ion-icon>
             <input id="password" type="password" required />
             <label for="password">Senha</label>
@@ -20,8 +20,8 @@
               type="checkbox" />
               Lembrar de mim
             </label>
-            <a href="#">Recuperar a senha</a>
           </div>
+          <a href="#">Recuperar a senha</a>
           <button>
             Iniciar
           </button>
@@ -47,8 +47,8 @@ export default {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  /*background-image: ;*/
-  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
   background-position: center;
   background-size: cover;
 }

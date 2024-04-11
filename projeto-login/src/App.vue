@@ -19,5 +19,10 @@ export default {
 </script>
 
 <style>
-
+#app {
+  overflow-y: hidden;
+  height: 100vh;
+  background-image: url(./assets/tela.jpg);
+  background-repeat: no-repeat;
+}
 </style>
