@@ -22,7 +22,7 @@ export default {
 #app {
   overflow-y: hidden;
   height: 100vh;
-  background-image: url(./assets/tela.jpg);
+  background-image: url(./assets/futuro.jpg);
   background-repeat: no-repeat;
 }
 </style>
