@@ -6,13 +6,13 @@
           <h1>Login</h1>
           <div class="inputbox">
             <ion-icon name="mail-outline"></ion-icon>
-            <input id="user" type="email" required />
-            <label for="user">Usuário</label>
+            <input id="user" type="email" required @focus="moveLabelUp('user')" @blur="moveLabelDown('user')" />
+            <label for="user" :class="{ 'active' : userActive }">Usuário</label>
           </div>
           <div class="inputbox">
             <ion-icon name="lock-closed-outline"></ion-icon>
-            <input id="password" type="password" required />
-            <label for="password">Senha</label>
+            <input id="password" type="password" required @focus="moveLabelUp('password')" @blur="moveLabelDown('password')" />
+            <label for="password" :class="{ 'active' : passwordActive }">Senha</label>
           </div>
           <div class="forget">
             <label for="to recover">
@@ -37,6 +37,30 @@
 <script>
 export default {
   name: 'LoginPage',
+  data() {
+    return {
+      userActive: false,
+      passwordActive: false
+    };
+  },
+
+  methods: {
+    moveLabelUp(field) {
+      if (field === 'user') {
+        this.userActive = true;
+      } else if (field === 'password') {
+        this.passwordActive = true;
+      }
+    },
+
+    moveLabelDown(field) {
+      if (field === 'user') {
+        this.userActive = !this.$refs.user?.value;
+      } else if (field === 'password') {
+        this.passwordActive = !this.$refs.password?.value;
+      }
+    }
+  }
 }
 </script>
 
@@ -57,14 +81,13 @@ export default {
  position: relative;
  max-width: 400px;
  background-color: transparent;
- border: 2px solid rgba(255, 255, 255, 0.5);
+ border: 2px solid #ffffff80;
  border-radius: 20px;
  backdrop-filter: blur(55px);
  display: flex;
  justify-content: center;
  align-items: center;
  padding: 2rem 3rem;
-
 }
 
 .inputbox input {
@@ -84,6 +107,12 @@ export default {
   color: #fff;
   font-size: 1.2rem;
   top: 20px;
+}
+
+.inputbox label.active {
+  top: 10px; 
+  font-size: 0.8rem; 
+  color: #fff;
 }
 
 .forget {
