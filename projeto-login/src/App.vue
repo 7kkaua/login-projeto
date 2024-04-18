@@ -25,4 +25,10 @@ export default {
   background-image: url(./assets/futuro.jpg);
   background-repeat: no-repeat;
 }
+
+@media (max-width: 600px) {
+  #app {
+    background-image: url(./assets/futuro1.jpg);
+  }
+}
 </style>

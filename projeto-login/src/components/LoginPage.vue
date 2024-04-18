@@ -5,12 +5,12 @@
         <form>
           <h1>Login</h1>
           <div class="inputbox">
-            <ion-icon name="mail-outline"></ion-icon>
+            
             <input id="user" type="email" required @focus="moveLabelUp('user')" @blur="moveLabelDown('user')" />
             <label for="user" :class="{ 'active' : userActive }">Usuário</label>
           </div>
           <div class="inputbox">
-            <ion-icon name="lock-closed-outline"></ion-icon>
+            
             <input id="password" type="password" required @focus="moveLabelUp('password')" @blur="moveLabelDown('password')" />
             <label for="password" :class="{ 'active' : passwordActive }">Senha</label>
           </div>
@@ -198,6 +198,10 @@ register p a {
 
 register p a:hover {
   text-decoration: underline;
+}
+
+a {
+  color: #5D919F;
 }
 
 @media (max-width: 600px) {
