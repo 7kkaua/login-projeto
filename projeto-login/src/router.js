@@ -7,12 +7,6 @@ const routes = [
     component: LoginPage,
     name: 'LoginPage'
   },
-
-  /*{
-    path: '/movie-list',
-    component: MovieList,
-    name: 'MovieList'
-  }*/
 ];
 
 const router = createRouter({
